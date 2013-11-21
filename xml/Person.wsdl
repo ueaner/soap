@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<definitions name="ABOUTC_Person" targetNamespace="urn:ABOUTC_Person" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:ABOUTC_Person" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+<types xmlns="http://schemas.xmlsoap.org/wsdl/" />
+
+<!-- Messages -->
+<!-- Input parameters for method say -->
+<message name="sayRequest">
+<part name="name" type="xsd:string" />
+</message>
+<!-- Output for method say -->
+<message name="sayResponse">
+<part name="say" type="xsd:string" />
+</message>
+<!-- Input parameters for method serverVar -->
+<message name="serverVarRequest">
+</message>
+<!-- Output for method serverVar -->
+<message name="serverVarResponse">
+<part name="serverVar" type="xsd:" />
+</message>
+
+<!-- Ports -->
+<portType name="ABOUTC_PersonPort"><operation name="say">
+<input message="tns:sayRequest" />
+<output message="tns:sayResponse" />
+</operation>
+<operation name="serverVar">
+<input message="tns:serverVarRequest" />
+<output message="tns:serverVarResponse" />
+</operation>
+</portType>
+
+<!-- SOAP Bindings -->
+<binding name="ABOUTC_PersonBinding" type="tns:ABOUTC_PersonPort">
+<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+<operation name="say">
+<soap:operation soapAction="urn:ABOUTC_Person#Person#say" />
+<input><soap:body use="encoded" namespace="urn:ABOUTC_Person" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:ABOUTC_Person" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</output>
+</operation>
+<operation name="serverVar">
+<soap:operation soapAction="urn:ABOUTC_Person#Person#serverVar" />
+<input><soap:body use="encoded" namespace="urn:ABOUTC_Person" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:ABOUTC_Person" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</output>
+</operation>
+</binding>
+
+<!-- Service (location) -->
+<service name="ABOUTC_Person">
+<documentation />
+<port name="ABOUTC_PersonPort" binding="tns:ABOUTC_PersonBinding"><soap:address location="http://localhost:80/soap/wsdl/PersonService.php?wsdl" />
+</port>
+</service>
+</definitions>

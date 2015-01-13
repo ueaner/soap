@@ -76,8 +76,6 @@ WSDL 模式 和 non-WSDL 模式对照表：
 另外 WSDL 模式对外提供 WSDL 定义的 xml 文件，所以在以 GET 方式访问 http://127.0.0.1:80/soap/wsdl/PersonService.php?wsdl
 地址时会输出相应的 xml 文件，对接口对象或函数进行说明。
 
-具体实现请见 [https://github.com/ueaner/soap] 源码，如有疑问，欢迎在本页下方进行回复。
-
 
 [WEB服务]: http://zh.wikipedia.org/wiki/Web服务
 [SOAP]: http://zh.wikipedia.org/wiki/SOAP
@@ -85,5 +83,3 @@ WSDL 模式 和 non-WSDL 模式对照表：
 [REST]: http://zh.wikipedia.org/wiki/REST
 [OAuth]: http://zh.wikipedia.org/wiki/OAuth
 [nusoap]: http://sourceforge.net/projects/nusoap/
-
-[https://github.com/ueaner/soap]: https://github.com/ueaner/soap "PHP SOAP 实例"

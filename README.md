@@ -4,7 +4,7 @@ PHP SOAP 实例
 放在WEB服务的任意位置，访问：http://localhost/[path-to-soap]/test.php
 
 
-#### 简介 {#summary}
+#### 简介
 
 通常我们的应用服务需要在不同的平台进行交互操作的时候，会使用 [WEB服务].
 
@@ -17,7 +17,7 @@ PHP SOAP 实例
 
 本篇文章重点：SOAP 简单对象访问协议（Simple Object Access Protocol）。
 
-#### PHP SOAP {#php-soap}
+#### PHP SOAP
 
 __模式__：
 

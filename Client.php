@@ -28,6 +28,8 @@ class Client {
 
     private $serviceName = '';
 
+    private $wsdlCacheEnabled = 0; // WSDL 缓存：1开启，0关闭
+
     public function __construct($params = array()) {
         if (count($params) > 0) {
             foreach ($params as $key => $val) {
@@ -43,6 +45,10 @@ class Client {
             'encoding' => $this->encoding,
             'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP
         );
+
+        if (!$this->wsdlCacheEnabled) {
+            $this->options['cache_wsdl'] = WSDL_CACHE_NONE;
+        }
 
         if ($this->serviceUri == '') {
             // $this->serverDir = '/' . trim('/' . $this->serverDir . '/', '/') . '/';
@@ -72,6 +78,10 @@ class Client {
 //        var_dump($this->serviceUri, $this->options);exit;
 
         return new SoapClient($this->serviceUri, $this->options);
+    }
+
+    public function getServiceUri() {
+        return $this->serviceUri;
     }
 }
 

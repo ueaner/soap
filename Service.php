@@ -95,7 +95,7 @@ class Service {
                     if ($method->getDocComment()) {
                         $pattern = '/@return\s+(string|boolean|int|integer|float|double)/i';
                         preg_match($pattern, $method->getDocComment(), $matches);
-                        $return = $matches[1];
+                        $return = isset($matches[1]) ? $matches[1] : '';
                     }
                     else {
                         $return = 'string';
